@@ -1,14 +1,22 @@
 import React from "react";
-// import ListingCard from "./ListingCard";
+import ListingCard from "./ListingCard";
 
-function ListingsContainer() {
+function ListingsContainer({listings}) {
   return (
     <main>
       <ul className="cards">
-        {/* use the ListingCard component to display listings */}
+        {
+          listings.map((el) => {
+          return <ListingCard key={el.id} listing={el} />
+         })}
       </ul>
     </main>
   );
 }
 
 export default ListingsContainer;
+
+//CORE DELIVERABLE 1
+//When the app starts, I can see all listings.
+  // .map return all listings when the aapp starts
+  /* use the ListingCard component to display listings */
